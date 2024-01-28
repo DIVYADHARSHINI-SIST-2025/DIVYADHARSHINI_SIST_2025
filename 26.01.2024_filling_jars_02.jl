@@ -54,3 +54,23 @@ for _ in range(m):
     operations.append(operation)
 result = solve(n, operations)
 print(result)
+  #i tried but not getting all passed testcases
+  #long totalCandies = 0;
+     # for (int i = 0; i < operations.size(); i++) {
+      #  // Get the current operation (a list of integers)
+       # List<Integer> operation = operations.get(i);
+
+        #// Extract values from the current operation
+        #int start = operation.get(0);
+        #int end = operation.get(1);
+        #int candiesToAdd = operation.get(2);
+
+        #// Calculate the total candies to add for the current operation
+        #long candiesForCurrentOperation = (long) (end - start + 1) * candiesToAdd;
+
+        #// Add the calculated candies to the total
+        #totalCandies += candiesForCurrentOperation;
+    #}
+
+    #// Calculate the average and return the floor value
+    #return (int) Math.round((double)(totalCandies / n));
