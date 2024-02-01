@@ -18,18 +18,27 @@ Input: prices = [7,6,4,3,1]
 Output: 0
 Explanation: In this case, no transactions are done and the max profit = 0. */
 class Solution {
-    public boolean containsDuplicate(int[] nums) {
-        Arrays.sort(nums);
-        for(int i=0;i<nums.length-1;i++)
-        {
-            
-                if(nums[i]==nums[i+1])
-                {
-                    return true;
-                }
-            
+    public int maxProfit(int[] prices) {
+        if (prices == null || prices.length <= 1) {
+            return 0; // If there are fewer than two days, no profit can be made
         }
+
+        int minPrice = prices[0];
+        int maxProfit = 0;
+
+        for (int i = 1; i < prices.length; i++) {
+            int currentPrice = prices[i];
+            int potentialProfit = currentPrice - minPrice;
+
+            // Update maxProfit if a better selling point is found
+            maxProfit = Math.max(maxProfit, potentialProfit);
+
+            // Update minPrice if a lower buying point is found
+            minPrice = Math.min(minPrice, currentPrice);
+        }
+
+        return maxProfit;
+        }
+       
         
-        return false;
     }
-}
